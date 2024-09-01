@@ -1,4 +1,4 @@
-# Folder Name: K Chandrashekar - NodeJs - Assignment - 10
+# Card Manager using SQL
 
 This folder contains the files and resources related to the Node.js assignment submitted by K Chandrashekar. 
 
