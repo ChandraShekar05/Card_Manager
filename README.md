@@ -1,8 +1,5 @@
 # Card Manager using SQL
 
-This folder contains the files and resources related to the Node.js assignment submitted by K Chandrashekar. 
-
-
 ## Getting Started
 
 To get started with this project, follow these steps:
