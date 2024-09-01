@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./styles/admin.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+    </div>
+    <button id="logoutButton">Logout</button>
+    <!-- User Management -->
+    <div class="buttons-container">
+        <button id="createBtn">
+            <img src="./images/create.png" alt="Create">
+            Create
+        </button>
+        <button id="readBtn">
+            <img src="./images/read.png" alt="Read">
+            Read
+        </button>
+        <button id="updateBtn">
+            <img src="./images/update.png" alt="Update">
+            Update
+        </button>
+        <button id="deleteBtn">
+            <img src="./images/delete.png" alt="Delete">
+            Delete
+        </button>
+    </div>
+
+    <div id="createModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="createUserForm">
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
+                <button type="submit">Create Card</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+   
+
+    <div id="updateModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="updateUserForm">
+                <input type="text" id="update-username" name="update-username" placeholder="Enter username to update" required>
+                <input type="password" id="update-password" name="update-password" placeholder="Enter new password" required>
+                <button type="submit">Update User</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="deleteUserForm">
+                <input type="text" id="delete-username" name="delete-username" placeholder="Enter username to delete" required>
+                <button type="submit">Delete User</button>
+            </form>
+        </div>
+    </div>
+
+    <h3>Analysis</h3>
+    <p>Total Users: <span id="total-users">0</span></p>
+    <p>Total Cards: <span id="total-cards">0</span></p>
+    <script src="./javascript/index.js"></script>
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>

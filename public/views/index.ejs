@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Management</title>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Card Details</h1>
+    </div>
+    <button id="logoutButton">Logout</button>
+    <div class="buttons-container">
+        <button id="createBtn">
+            <img src="./images/create.png" alt="Create">
+            Create
+        </button>
+        <button id="readBtn">
+            <img src="./images/read.png" alt="Read">
+            Read
+        </button>
+        <button id="readByIdBtn">
+            <img src="./images/read by id.png" alt="Read By Id">
+            Read By Id
+        </button>
+        <button id="updateBtn">
+            <img src="./images/update.png" alt="Update">
+            Update
+        </button>
+        <button id="deleteBtn">
+            <img src="./images/delete.png" alt="Delete">
+            Delete
+        </button>
+    </div>
+
+    <!-- Modal Popups -->
+    <div id="createModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="createCardForm">
+                <input type="text" id="cardNumber" placeholder="Card Number" required>
+                <input type="text" id="cardholderName" placeholder="Cardholder Name" required>
+                <input type="text" id="cardType" placeholder="Card Type" required>
+                <input type="date" id="expirationDate" required>
+                <input type="text" id="cvv" placeholder="CVV" required>
+                <input type="text" id="bankName" placeholder="Bank Name" required>
+                <input type="text" id="issuingCountry" placeholder="Issuing Country" required>
+                <button type="submit">Create Card</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="cardModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <table id="cardTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Card Number</th>
+                        <th>Cardholder Name</th>
+                        <th>Card Type</th>
+                        <th>Expiration Date</th>
+                        <th>CVV</th>
+                        <th>Bank Name</th>
+                        <th>Issuing Country</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="readByIdModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="getCardDetailsForm">
+                <input type="number" id="get_id" placeholder="Id" required>
+                <button type="submit">Get Card Details</button>
+            </form>
+        </div>
+    </div>
+   
+    <!-- Card Details Modal -->
+    <div id="cardDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="cardDetails"></div>
+        </div>
+    </div>
+
+    <div id="updateModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="fetchByIdForm">
+                <input type="text" id="fetch_id" placeholder="Enter Card ID" required>
+                <button type="submit">Fetch Card</button>
+            </form>
+            <form id="updateCardForm">
+                <input type="number" id="id" placeholder="id" required>
+                <input type="text" id="update_cardNumber" placeholder="Card Number" required>
+                <input type="text" id="update_cardholderName" placeholder="Cardholder Name" required>
+                <input type="text" id="update_cardType" placeholder="Card Type" required>
+                <input type="date" id="update_expirationDate" required>
+                <input type="text" id="update_cvv" placeholder="CVV" required>
+                <input type="text" id="update_bankName" placeholder="Bank Name" required>
+                <input type="text" id="update_issuingCountry" placeholder="Issuing Country" required>
+                <button type="submit">Update Card</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="deleteCardForm">
+                <input type="number" id="delete_id" placeholder="Id" required>
+                <button type="submit">Delete Card</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./javascript/script.js"></script>
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>
